@@ -15,7 +15,7 @@ namespace NameGen
     public:
         NameGen();
         std::string createPlanetName(int timeMod);
-        std::string createTownName();
+        std::string createTownName(int timeMod);
 
     private:
         // ----- Planet variables here -----

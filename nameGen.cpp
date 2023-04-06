@@ -36,7 +36,7 @@ namespace NameGen
         return planetName;
     }
 
-    std::string NameGen::createTownName()
+    std::string NameGen::createTownName(int timeMod)
     {
 
         return "Not implemented yet.";
