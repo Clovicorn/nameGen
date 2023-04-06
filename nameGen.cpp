@@ -6,10 +6,10 @@ namespace NameGen
     {
     }
 
-    std::string NameGen::createPlanetName()
+    std::string NameGen::createPlanetName(int timeMod)
     {
         std::string planetName = "";
-        std::srand((int)std::time(nullptr));
+        std::srand((int)std::time(nullptr) * timeMod);
         float percent = (float)(std::rand() % RAND_MAX);
         int index = 0;
         if (percent > 0.5)
@@ -17,13 +17,13 @@ namespace NameGen
             _planetHasMiddleSyllable = true;
         }
 
-        std::srand((int)std::time(nullptr));
+        std::srand((int)std::time(nullptr) * (timeMod + 1));
         index = (int)(std::rand() % PLANETFIRSTSYLLABLE);
         planetName += _firstSyllablePlanet[index];
 
         if (_planetHasMiddleSyllable)
         {
-            std::srand((int)std::time(nullptr));
+            std::srand((int)std::time(nullptr) * (timeMod + 2));
             index = (int)(std::rand() % PLANETMIDDLESYLLABLE);
             planetName += _middleSyllablePlanet[index];
         }
